@@ -3,9 +3,9 @@ const NEAActions = require('../actions/NEA/index')
 exports.add = async ( req, res ) => {
   try {
     const createdNEA = await NEAActions.add(req.body)
-    res.status(201).send(createdNEA)
+    res.status(createdNEA.error? 400 : 201).send(createdNEA)
   } catch (err) {
-    res.status(404).send(`NEA ${req.params.NEAId} not found`) //ToDo Error code and messagge dinámico
+    res.status(500).send(`An error ocurred`) //ToDo agregar un mensaje más explicativo
   }
 }
 exports.addList = async ( req, res ) => {
@@ -19,9 +19,9 @@ exports.addList = async ( req, res ) => {
 exports.deleteNEA = async ( req, res ) => {
   try {
     const deletedNEA = NEAActions.deleteNEA(req.params)
-    res.status(200).send(deletedNEA)
+    res.status(deletedNEA.error? 400 : 200).send(deletedNEA)
   } catch (error) {
-    res.status(404).send(`NEA ${req.params.NEAId} not found`) //ToDo Error code and messagge dinámico
+    res.status(500).send(`An error ocurred`) //ToDo agregar un mensaje más explicativo
   }
 }
 exports.findAll = async ( req, res ) => {
@@ -34,7 +34,7 @@ exports.findAll = async ( req, res ) => {
 }
 exports.find = async ( req, res ) => {
   try {
-    const requiredNEA = await NEAActions.find(req.params)
+    const requiredNEA = await NEAActions.find(req.body)
     res.status(200).send(requiredNEA)
   } catch (err) {
     res.status(404).send(`NEA ${req.params.NEAId} not found`) //ToDo Error code and messagge dinámico

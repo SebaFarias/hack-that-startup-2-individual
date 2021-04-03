@@ -5,6 +5,7 @@ const uri = process.env.DBURI
 const options = {
   useNewUrlParser: true,
   useUnifiedTopology: true,
+  useCreateIndex: true,
 }
 
 mongoose.connect( uri , options)
