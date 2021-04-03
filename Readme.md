@@ -13,4 +13,4 @@ Runs the app in the development mode.\
 Send requests to [http://localhost:8000](http://localhost:8000) to use it.
 
 The app will reload if you make edits.\
-You will also see any request recived in the console.
+You will also see all request recived in the console.
