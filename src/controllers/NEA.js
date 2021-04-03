@@ -10,17 +10,18 @@ exports.add = async ( req, res ) => {
 }
 exports.addList = async ( req, res ) => {
   try {
-    const createdNEAs = await NEAActions.addList(req.body)
-    res.status(201).send(createdNEAs)
+    const createdNEAs = await NEAActions.addList( req.body )
+    res.status(createdNEAs.error? 400 : 201).send(createdNEAs)
   } catch (err) {
-    res.status(404).send('an error ocurred') //ToDo Arreglar esta cochinada
+    console.log(err)
+    res.status(500).send('An error ocurred') //ToDo Arreglar esta cochinada
   }
 }
 exports.deleteNEA = async ( req, res ) => {
   try {
     const deletedNEA = NEAActions.deleteNEA(req.params)
     res.status(deletedNEA.error? 400 : 200).send(deletedNEA)
-  } catch (error) {
+  } catch (err) {
     res.status(500).send(`An error ocurred`) //ToDo agregar un mensaje más explicativo
   }
 }
