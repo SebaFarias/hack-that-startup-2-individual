@@ -14,6 +14,10 @@
     "MongoDB"
   ],
   "author": "SebaFarias",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SebaFarias/hack-that-startup-2-individual.git"
+  },
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
