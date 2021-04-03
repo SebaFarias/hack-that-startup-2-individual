@@ -1,0 +1,16 @@
+{
+  "name": "hack-that-startup-2-individual",
+  "version": "1.0.0",
+  "description": "individual project for Hack that Startup Vol 2 Armageddon edition",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "MongoDB"
+  ],
+  "author": "SebaFarias",
+  "license": "ISC"
+}
