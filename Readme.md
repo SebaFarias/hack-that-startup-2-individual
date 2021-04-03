@@ -1,6 +1,6 @@
 # Hack that Startup vol. 2 Armageddon Edition
 
- ![](https://raw.githubusercontent.com/nuwe-io/files_storage/main/Hacks/Demium/HTS2.png)
+ ![](https://raw.githubusercontent.com/nuwe-io/files_storage/main/Hacks/Demium/HTS2.png)<br/><br/>
  This project was created for participing on this challenge.
 
 ## Available Scripts
