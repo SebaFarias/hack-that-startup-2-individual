@@ -2,7 +2,7 @@ const express = require('express')
 const morgan = require('morgan')
 const helmet = require('helmet')
 const cors = require('cors')
-const asteroidsRoutes = require('./routes/asteroids')
+const NEARoutes = require('./routes/NEA')
 
 const app = express()
 
@@ -13,7 +13,7 @@ app.use(cors({
   origin: process.env.CORS_ORIGIN,
 }))
 
-app.use('/api/v1/asteroids',asteroidsRoutes)
+app.use('/api/v1/NEA',NEARoutes)
 app.get('/', ( req, res ) => {
   res.status(200).json({
     message: "Ok"
