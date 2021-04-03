@@ -27,9 +27,10 @@ exports.deleteNEA = async ( req, res ) => {
 exports.findAll = async ( req, res ) => {
   try {
     const allNEAs = await NEAActions.findAll()
-    res.status(200).send(allNEAs)
+    res.status( allNEAs.error? 404 : 200).send(allNEAs)
   } catch (err) {
-    res.status(404).send('error message') //ToDo Agregar mensaje
+    console.log(err)
+    res.status(500).send('An error ocurred') //ToDo Agregar mensaje más explicativo
   }
 }
 exports.find = async ( req, res ) => {
